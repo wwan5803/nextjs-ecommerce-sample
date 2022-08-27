@@ -16,7 +16,7 @@ const Layout = ({ title, children }: LayoutPropsTypes) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex min-h-screen flex-col justify-between">
+      <div className="flex min-h-screen flex-col justify-between ">
         <header>
           <nav>
             <Link href="/">
@@ -24,7 +24,7 @@ const Layout = ({ title, children }: LayoutPropsTypes) => {
             </Link>
           </nav>
         </header>
-        <main>{children}</main>
+        <main className="sm:p-3 md:p-5">{children}</main>
         <footer>footer</footer>
       </div>
     </>
