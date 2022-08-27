@@ -6,7 +6,6 @@ import Layout from "../components/Layout"
 import { Store } from "../utils/Store"
 import { useRouter } from "next/router"
 import dynamic from "next/dynamic"
-import { toast } from "react-toastify"
 
 function CartScreen() {
   const router = useRouter()
@@ -14,10 +13,10 @@ function CartScreen() {
   const {
     cart: { cartItems }
   } = state
-  const removeItemHandler = (item) => {
+  const removeItemHandler = (item: Product) => {
     dispatch({ type: "CART_REMOVE_ITEM", payload: item })
   }
-  const updateCartHandler = async (item, qty) => {
+  const updateCartHandler = async (item: Product, qty: string) => {
     const quantity = Number(qty)
     dispatch({ type: "CART_ADD_ITEM", payload: { ...item, quantity } })
   }
@@ -41,7 +40,7 @@ function CartScreen() {
                 </tr>
               </thead>
               <tbody>
-                {cartItems.map((item) => (
+                {cartItems.map((item: Product) => (
                   <tr key={item.slug} className="border-b">
                     <td>
                       <Link href={`/product/${item.slug}`}>
@@ -64,11 +63,13 @@ function CartScreen() {
                           updateCartHandler(item, e.target.value)
                         }
                       >
-                        {[...Array(item.countInStock).keys()].map((x) => (
-                          <option key={x + 1} value={x + 1}>
-                            {x + 1}
-                          </option>
-                        ))}
+                        {[...Array.from(Array(item.countInStock).keys())].map(
+                          (x) => (
+                            <option key={x + 1} value={x + 1}>
+                              {x + 1}
+                            </option>
+                          )
+                        )}
                       </select>
                     </td>
                     <td className="p-5 text-right">${item.price}</td>
@@ -86,8 +87,16 @@ function CartScreen() {
             <ul>
               <li>
                 <div className="pb-3 text-xl">
-                  Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}) : $
-                  {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+                  Subtotal (
+                  {cartItems.reduce(
+                    (a: number, c: Product) => a + c.quantity,
+                    0
+                  )}
+                  ) : $
+                  {cartItems.reduce(
+                    (a: number, c: Product) => a + c.quantity * c.price,
+                    0
+                  )}
                 </div>
               </li>
               <li>
