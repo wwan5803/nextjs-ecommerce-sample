@@ -22,9 +22,6 @@ export default function ProductItem({ product }) {
         </Link>
         <p className="mb-2">{product.brand}</p>
         <p>${product.price}</p>
-        <button className="primary-button" type="button" onClick={() => null}>
-          Add to cart
-        </button>
       </div>
     </div>
   )

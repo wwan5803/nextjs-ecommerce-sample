@@ -28,7 +28,7 @@ const Layout = ({ title, children }: LayoutPropsTypes) => {
         <header>
           <nav className="flex h-12 items-center px-4 justify-between shadow-md">
             <Link href="/">
-              <a className="text-lg font-bold">amazona</a>
+              <a className="text-lg font-bold">Sleek Style</a>
             </Link>
             <div>
               <Link href="/cart">
@@ -46,7 +46,7 @@ const Layout = ({ title, children }: LayoutPropsTypes) => {
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
-          <p>Copyright © 2022 Amazona</p>
+          <p>Copyright © 2022 Sleek Style</p>
         </footer>
       </div>
     </>
