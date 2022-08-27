@@ -10,13 +10,16 @@
     "prettier-format": "prettier --config .prettierrc \"./**/*.{ts,tsx,js,jsx,css,md,json}\" --write"
   },
   "dependencies": {
-    "next": "12.2.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^2.0.8",
+    "js-cookie": "^3.0.1",
+    "next": "12.2.5",
+    "next-auth": "^4.3.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-toastify": "^9.0.1"
+  },
+  "devDependencies": {
     "@types/node": "18.7.13",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
