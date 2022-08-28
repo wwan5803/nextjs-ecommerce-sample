@@ -6,7 +6,7 @@ import data from "../utils/data"
 export default function Home({ products }) {
   return (
     <Layout
-      url={window.location.href}
+      url={typeof window !== "undefined" ? window.location.href : ""}
       description="This is home page listing all products"
       title="Home Page"
     >

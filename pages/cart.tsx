@@ -20,7 +20,7 @@ function CartScreen() {
   }
   return (
     <Layout
-      url={window.location.href}
+      url={typeof window !== "undefined" ? window.location.href : ""}
       description="This is shopping cart"
       title="Shopping Cart"
     >

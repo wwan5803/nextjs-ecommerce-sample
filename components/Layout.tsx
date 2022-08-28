@@ -14,10 +14,10 @@ interface LayoutPropsTypes {
 
 const Layout = ({
   title,
-  url,
+  url = "",
   description,
   addCanonicalLink,
-  image,
+  image = "",
   children
 }: LayoutPropsTypes) => {
   const { state, dispatch } = useContext(Store)

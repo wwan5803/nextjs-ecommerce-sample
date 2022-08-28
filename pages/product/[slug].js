@@ -25,10 +25,14 @@ export default function ProductScreen() {
 
   return (
     <Layout
-      url={window.location.href}
+      url={typeof window !== "undefined" ? window.location.href : ""}
       description={product.description}
       title={product.name}
-      image={`${window.location.host}${product.image}`}
+      image={
+        typeof window !== "undefined"
+          ? `${window.location.host}${product.image}`
+          : ""
+      }
     >
       <div className="py-2">
         <Link href="/">back to products</Link>
