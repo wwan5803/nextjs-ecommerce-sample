@@ -24,7 +24,12 @@ export default function ProductScreen() {
   }
 
   return (
-    <Layout title={product.name}>
+    <Layout
+      url={window.location.href}
+      description={product.description}
+      title={product.name}
+      image={`${window.location.host}${product.image}`}
+    >
       <div className="py-2">
         <Link href="/">back to products</Link>
       </div>

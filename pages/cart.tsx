@@ -4,11 +4,9 @@ import React, { useContext } from "react"
 import { IoClose } from "react-icons/io5"
 import Layout from "../components/Layout"
 import { Store } from "../utils/Store"
-import { useRouter } from "next/router"
 import dynamic from "next/dynamic"
 
 function CartScreen() {
-  const router = useRouter()
   const { state, dispatch } = useContext(Store)
   const {
     cart: { cartItems }
@@ -21,7 +19,11 @@ function CartScreen() {
     dispatch({ type: "CART_ADD_ITEM", payload: { ...item, quantity } })
   }
   return (
-    <Layout title="Shopping Cart">
+    <Layout
+      url={window.location.href}
+      description="This is shopping cart"
+      title="Shopping Cart"
+    >
       <h1 className="mb-4 text-xl">Shopping Cart</h1>
       {cartItems.length === 0 ? (
         <div>
